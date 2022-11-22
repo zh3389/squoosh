@@ -114,7 +114,7 @@
               (await a(r),
               'reload' ===
                 (await t('Update available', {
-                  actions: ['reload', 'dismiss'],
+                  actions: ['重新加载', '不考虑'],
                 })) &&
                 (async function () {
                   const e = await navigator.serviceWorker.getRegistration();

@@ -177,11 +177,11 @@ export class Options extends Component<Props, State> {
             value={'' + (100 - options.near_lossless)}
             onInput={this.onChange}
           >
-            Slight loss:
+            轻微损失:
           </Range>
         </div>
         <label class={style.optionToggle}>
-          Discrete tone image
+          离散色调图像
           {/*
             Although there are 3 different kinds of image hint, webp only
             seems to do something with the 'graph' type, and I don't really
@@ -222,7 +222,7 @@ export class Options extends Component<Props, State> {
             value={options.quality}
             onInput={this.onChange}
           >
-            Quality:
+            质量:
           </Range>
         </div>
         <label class={style.optionReveal}>
@@ -230,13 +230,13 @@ export class Options extends Component<Props, State> {
             checked={showAdvanced}
             onChange={linkState(this, 'showAdvanced')}
           />
-          Advanced settings
+          高级设置
         </label>
         <Expander>
           {showAdvanced ? (
             <div>
               <label class={style.optionToggle}>
-                Compress alpha
+                压缩alpha
                 <Checkbox
                   name="alpha_compression"
                   checked={!!options.alpha_compression}
@@ -251,7 +251,7 @@ export class Options extends Component<Props, State> {
                   value={options.alpha_quality}
                   onInput={this.onChange}
                 >
-                  Alpha quality:
+                  Alpha质量:
                 </Range>
               </div>
               <div class={style.optionOneCell}>
@@ -262,11 +262,11 @@ export class Options extends Component<Props, State> {
                   value={options.alpha_filtering}
                   onInput={this.onChange}
                 >
-                  Alpha filter quality:
+                  Alpha过滤器质量:
                 </Range>
               </div>
               <label class={style.optionToggle}>
-                Auto adjust filter strength
+                自动调整过滤器强度
                 <Checkbox
                   name="autofilter"
                   checked={!!options.autofilter}
@@ -283,13 +283,13 @@ export class Options extends Component<Props, State> {
                       value={options.filter_strength}
                       onInput={this.onChange}
                     >
-                      Filter strength:
+                      过滤器强度:
                     </Range>
                   </div>
                 )}
               </Expander>
               <label class={style.optionToggle}>
-                Strong filter
+                强力过滤器
                 <Checkbox
                   name="filter_type"
                   checked={!!options.filter_type}
@@ -304,11 +304,11 @@ export class Options extends Component<Props, State> {
                   value={7 - options.filter_sharpness}
                   onInput={this.onChange}
                 >
-                  Filter sharpness:
+                  过滤器锐度:
                 </Range>
               </div>
               <label class={style.optionToggle}>
-                Sharp RGB→YUV conversion
+                锐利RGB→YUV转换
                 <Checkbox
                   name="use_sharp_yuv"
                   checked={!!options.use_sharp_yuv}
@@ -323,7 +323,7 @@ export class Options extends Component<Props, State> {
                   value={options.pass}
                   onInput={this.onChange}
                 >
-                  Passes:
+                  通行证:
                 </Range>
               </div>
               <div class={style.optionOneCell}>
@@ -334,19 +334,19 @@ export class Options extends Component<Props, State> {
                   value={options.sns_strength}
                   onInput={this.onChange}
                 >
-                  Spatial noise shaping:
+                  空间噪声整形:
                 </Range>
               </div>
               <label class={style.optionTextFirst}>
-                Preprocess:
+                预处理:
                 <Select
                   name="preprocessing"
                   value={options.preprocessing}
                   onChange={this.onChange}
                 >
-                  <option value="0">None</option>
-                  <option value="1">Segment smooth</option>
-                  <option value="2">Pseudo-random dithering</option>
+                  <option value="0">无</option>
+                  <option value="1">分段平滑</option>
+                  <option value="2">伪随机抖动</option>
                 </Select>
               </label>
               <div class={style.optionOneCell}>
@@ -357,7 +357,7 @@ export class Options extends Component<Props, State> {
                   value={options.segments}
                   onInput={this.onChange}
                 >
-                  Segments:
+                  部分:
                 </Range>
               </div>
               <div class={style.optionOneCell}>
@@ -368,7 +368,7 @@ export class Options extends Component<Props, State> {
                   value={options.partitions}
                   onInput={this.onChange}
                 >
-                  Partitions:
+                  分区:
                 </Range>
               </div>
             </div>
@@ -384,7 +384,7 @@ export class Options extends Component<Props, State> {
     return (
       <form class={style.optionsSection} onSubmit={preventDefault}>
         <label class={style.optionToggle}>
-          Lossless
+          无损检测
           <Checkbox
             name="lossless"
             checked={!!options.lossless}
@@ -395,7 +395,7 @@ export class Options extends Component<Props, State> {
           ? this._losslessSpecificOptions(options)
           : this._lossySpecificOptions(options)}
         <label class={style.optionToggle}>
-          Preserve transparent data
+          保留透明数据
           <Checkbox
             name="exact"
             checked={!!options.exact}

@@ -418,9 +418,9 @@ export default class Compress extends Component<Props, State> {
       sides: cleanSet(this.state.sides, otherIndex, newSettings),
     });
 
-    const result = await this.props.showSnack('Settings copied across', {
+    const result = await this.props.showSnack('复制的设置', {
       timeout: 5000,
-      actions: ['undo', 'dismiss'],
+      actions: ['打开', '不考虑'],
     });
 
     if (result !== 'undo') return;
@@ -473,7 +473,7 @@ export default class Compress extends Component<Props, State> {
         'CLI command copied to clipboard',
         {
           timeout: 8000,
-          actions: ['usage', 'dismiss'],
+          actions: ['用法', '不考虑'],
         },
       );
 
@@ -641,7 +641,7 @@ export default class Compress extends Component<Props, State> {
         });
       } catch (err) {
         if (err instanceof Error && err.name === 'AbortError') return;
-        this.props.showSnack(`Source decoding error: ${err}`);
+        this.props.showSnack(`源解码错误: ${err}`);
         throw err;
       }
     } else {
@@ -700,7 +700,7 @@ export default class Compress extends Component<Props, State> {
       } catch (err) {
         if (err instanceof Error && err.name === 'AbortError') return;
         this.setState({ loading: false });
-        this.props.showSnack(`Preprocessing error: ${err}`);
+        this.props.showSnack(`预处理错误: ${err}`);
         throw err;
       }
     } else {
@@ -829,7 +829,7 @@ export default class Compress extends Component<Props, State> {
           });
           return { sides };
         });
-        this.props.showSnack(`Processing error: ${err}`);
+        this.props.showSnack(`预处理错误: ${err}`);
         throw err;
       }
     });
@@ -867,7 +867,7 @@ export default class Compress extends Component<Props, State> {
         typeLabel={
           side.latestSettings.encoderState
             ? encoderMap[side.latestSettings.encoderState.type].meta.label
-            : 'Original Image'
+            : '原始图像'
         }
       />
     ));

@@ -156,7 +156,7 @@ export class Options extends Component<Props, State> {
     return (
       <form class={style.optionsSection} onSubmit={preventDefault}>
         <label class={style.optionToggle}>
-          Lossless
+          无损检测
           <Checkbox
             checked={lossless}
             onChange={this._inputChange('lossless', 'boolean')}
@@ -172,7 +172,7 @@ export class Options extends Component<Props, State> {
                 value={slightLoss}
                 onInput={this._inputChange('slightLoss', 'number')}
               >
-                Slight loss:
+                轻微损失:
               </Range>
             </div>
           )}
@@ -188,11 +188,11 @@ export class Options extends Component<Props, State> {
                   value={quality}
                   onInput={this._inputChange('quality', 'number')}
                 >
-                  Quality:
+                  质量:
                 </Range>
               </div>
               <label class={style.optionToggle}>
-                Separate alpha quality
+                单独的alpha质量
                 <Checkbox
                   checked={separateAlpha}
                   onChange={this._inputChange('separateAlpha', 'boolean')}
@@ -208,7 +208,7 @@ export class Options extends Component<Props, State> {
                       value={alphaQuality}
                       onInput={this._inputChange('alphaQuality', 'number')}
                     >
-                      Alpha Quality:
+                      Alpha质量:
                     </Range>
                   </div>
                 )}
@@ -218,7 +218,7 @@ export class Options extends Component<Props, State> {
                   checked={showAdvanced}
                   onChange={linkState(this, 'showAdvanced')}
                 />
-                Advanced settings
+                高级设置
               </label>
               <Expander>
                 {showAdvanced && (
@@ -231,7 +231,7 @@ export class Options extends Component<Props, State> {
                         value={passes}
                         onInput={this._inputChange('passes', 'number')}
                       >
-                        Passes:
+                        通行证:
                       </Range>
                     </div>
                     <div class={style.optionOneCell}>
@@ -242,7 +242,7 @@ export class Options extends Component<Props, State> {
                         value={sns}
                         onInput={this._inputChange('sns', 'number')}
                       >
-                        Spatial noise shaping:
+                        空间噪声整形:
                       </Range>
                     </div>
                     <div class={style.optionOneCell}>
@@ -253,23 +253,23 @@ export class Options extends Component<Props, State> {
                         value={errorDiffusion}
                         onInput={this._inputChange('errorDiffusion', 'number')}
                       >
-                        Error diffusion:
+                        误差扩散:
                       </Range>
                     </div>
                     <label class={style.optionTextFirst}>
-                      Subsample chroma:
+                      子采样色度:
                       <Select
                         value={uvMode}
                         onInput={this._inputChange('uvMode', 'number')}
                       >
-                        <option value={UVMode.UVModeAuto}>Auto</option>
-                        <option value={UVMode.UVModeAdapt}>Vary</option>
-                        <option value={UVMode.UVMode420}>Half</option>
-                        <option value={UVMode.UVMode444}>Off</option>
+                        <option value={UVMode.UVModeAuto}>自动</option>
+                        <option value={UVMode.UVModeAdapt}>变化</option>
+                        <option value={UVMode.UVMode420}>一半</option>
+                        <option value={UVMode.UVMode444}>关闭</option>
                       </Select>
                     </label>
                     <label class={style.optionTextFirst}>
-                      Color space:
+                      空间色彩:
                       <Select
                         value={colorSpace}
                         onInput={this._inputChange('colorSpace', 'number')}
@@ -280,7 +280,7 @@ export class Options extends Component<Props, State> {
                       </Select>
                     </label>
                     <label class={style.optionToggle}>
-                      Random matrix
+                      随机矩阵
                       <Checkbox
                         checked={useRandomMatrix}
                         onChange={this._inputChange(

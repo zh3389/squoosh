@@ -136,7 +136,7 @@ export default class Options extends Component<Props, State> {
             <div>
               <h3 class={style.optionsTitle}>
                 <div class={style.titleAndButtons}>
-                  Edit
+                  编辑
                   <button
                     class={style.cliButton}
                     title="Copy npx command"
@@ -154,7 +154,7 @@ export default class Options extends Component<Props, State> {
                 </div>
               </h3>
               <label class={style.sectionEnabler}>
-                Resize
+                调整大小
                 <Toggle
                   name="resize.enable"
                   checked={!!processorState.resize.enabled}
@@ -174,7 +174,7 @@ export default class Options extends Component<Props, State> {
               </Expander>
 
               <label class={style.sectionEnabler}>
-                Reduce palette
+                调整调色板
                 <Toggle
                   name="quantize.enable"
                   checked={!!processorState.quantize.enabled}
@@ -193,7 +193,7 @@ export default class Options extends Component<Props, State> {
           )}
         </Expander>
 
-        <h3 class={style.optionsTitle}>Compress</h3>
+        <h3 class={style.optionsTitle}>压缩</h3>
 
         <section class={`${style.optionOneCell} ${style.optionsSection}`}>
           {supportedEncoderMap ? (
@@ -202,14 +202,14 @@ export default class Options extends Component<Props, State> {
               onChange={this.onEncoderTypeChange}
               large
             >
-              <option value="identity">Original Image</option>
+              <option value="identity">原始图像</option>
               {Object.entries(supportedEncoderMap).map(([type, encoder]) => (
                 <option value={type}>{encoder.meta.label}</option>
               ))}
             </Select>
           ) : (
             <Select large>
-              <option>Loading…</option>
+              <option>加载中…</option>
             </Select>
           )}
         </section>

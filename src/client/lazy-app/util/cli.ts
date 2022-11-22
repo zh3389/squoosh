@@ -17,8 +17,8 @@ import { EncoderState, ProcessorState } from '../feature-meta';
 const typeMap = new Map<string, string>([
   ['avif', '--avif'],
   ['jxl', '--jxl'],
-  ['mozJPEG', '--mozjpeg'],
-  ['oxiPNG', '--oxipng'],
+  ['火狐JPEG', '--mozjpeg'],
+  ['欧朋PNG', '--oxipng'],
   ['webP', '--webp'],
   ['wp2', '--wp2'],
 ]);
@@ -34,7 +34,7 @@ export function generateCliInvocation(
   processor: ProcessorState,
 ): string {
   if (!typeMap.has(encoder.type)) {
-    throw Error(`Encoder ${encoder.type} is unsupported in the CLI`);
+    throw Error(`编码器 ${encoder.type} CLI中不支持`);
   }
   return [
     'npx',

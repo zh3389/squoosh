@@ -456,7 +456,7 @@ export const codecs = {
     },
   },
   oxipng: {
-    name: 'OxiPNG',
+    name: '欧朋PNG',
     extension: 'png',
     detectors: [/^\x89PNG\x0D\x0A\x1A\x0A/],
     dec: async () => {
